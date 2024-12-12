@@ -1,0 +1,24 @@
+Executable = /nfs/cms/vazqueze/higgssearch/hcondor/run_botmuons.sh
+
+requirements = stringListIMember("DCACHE_NFS", TARGET.WN_property, ",")
+
+request_cpus=4
+
+Log    = higgsbackgFromJF$(ClusterId).$(ProcId).log
+Output = higgsbackgFromJF$(ClusterId).$(ProcId).out
+Error  = higgsbackgFromJF$(ClusterId).$(ProcId).err
+
+queue arguments from (
+  allMC 2016 mc
+  M 2016 data
+  E 2016 data
+  allMC 2018 mc
+  M 2018 data
+  E 2018 data
+  allMC 2016B mc
+  M 2016B data
+  E 2016B data
+  allMC 2017 mc
+  M 2017 data
+  E 2017 data
+)

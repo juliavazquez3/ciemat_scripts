@@ -1,0 +1,14 @@
+Executable = /nfs/cms/vazqueze/higgssearch/hcondor/run_sl_wcs.sh
+
+Request_memory = 10000
+request_cpus=8
++CieIncludeAF=True
++CieSingularityImage=cc7
+
+Log    = higgsbackgFromJF$(ClusterId).$(ProcId).log
+Output = higgsbackgFromJF$(ClusterId).$(ProcId).out
+Error  = higgsbackgFromJF$(ClusterId).$(ProcId).err
+
+queue arguments from (
+  allMC 2016 mc btagMM_chitest no
+)

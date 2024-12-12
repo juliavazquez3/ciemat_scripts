@@ -1,0 +1,60 @@
+Executable = /nfs/cms/vazqueze/higgssearch/hcondor/run_botetabins.sh
+
+request_cpus=4
++CieIncludeAF=True
++CieSingularityImage=cc7
+
+Log    = higgsbackgFromJF$(ClusterId).$(ProcId).log
+Output = higgsbackgFromJF$(ClusterId).$(ProcId).out
+Error  = higgsbackgFromJF$(ClusterId).$(ProcId).err
+
+queue arguments from (
+  allMC 2016 mc one_chi two
+  M 2016 data one_chi two
+  E 2016 data one_chi  two
+  allMC 2018 mc one_chi two
+  M 2018 data one_chi two
+  E 2018 data one_chi two
+  allMC 2016B mc one_chi two
+  M 2016B data one_chi two
+  E 2016B data one_chi two
+  allMC 2017 mc one_chi two
+  M 2017 data one_chi two
+  E 2017 data one_chi two
+  allMC 2016 mc one two
+  M 2016 data one two
+  E 2016 data one two
+  allMC 2018 mc one two
+  M 2018 data one two
+  E 2018 data one two
+  allMC 2016B mc one two
+  M 2016B data one two
+  E 2016B data one two
+  allMC 2017 mc one two
+  M 2017 data one two
+  E 2017 data one two
+  allMC 2016 mc two_chi two
+  M 2016 data two_chi two
+  E 2016 data two_chi  two
+  allMC 2018 mc two_chi two
+  M 2018 data two_chi two
+  E 2018 data two_chi two
+  allMC 2016B mc two_chi two
+  M 2016B data two_chi two
+  E 2016B data two_chi two
+  allMC 2017 mc two_chi two
+  M 2017 data two_chi two
+  E 2017 data two_chi two
+  allMC 2016 mc two two
+  M 2016 data two two
+  E 2016 data two two
+  allMC 2018 mc two two
+  M 2018 data two two
+  E 2018 data two two
+  allMC 2016B mc two two
+  M 2016B data two two
+  E 2016B data two two
+  allMC 2017 mc two two
+  M 2017 data two two
+  E 2017 data two two
+)

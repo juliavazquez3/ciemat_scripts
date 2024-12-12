@@ -1,0 +1,14 @@
+Executable = /nfs/cms/vazqueze/higgssearch/hcondor/run_botetabins.sh
+
+request_cpus=4
++CieIncludeAF=True
++CieSingularityImage=cc7
+
+Log    = higgsbackgFromJF$(ClusterId).$(ProcId).log
+Output = higgsbackgFromJF$(ClusterId).$(ProcId).out
+Error  = higgsbackgFromJF$(ClusterId).$(ProcId).err
+
+queue arguments from (
+  allMC 2016B mc one two
+  allMC 2016B mc two two
+)

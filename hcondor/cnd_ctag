@@ -1,0 +1,37 @@
+Executable = /nfs/cms/vazqueze/higgssearch/hcondor/run_ctag.sh
+
+Request_memory = 10000
+request_cpus=4
++CieIncludeAF=True
++CieSingularityImage=cc7
+
+Log    = higgsbackgFromJF$(ClusterId).$(ProcId).log
+Output = higgsbackgFromJF$(ClusterId).$(ProcId).out
+Error  = higgsbackgFromJF$(ClusterId).$(ProcId).err
+
+queue arguments from (
+  allMC 2016 mc btagMM_chitest noctag
+  M 2016 data btagMM_chitest noctag
+  E 2016 data btagMM_chitest noctag
+  allMC 2018 mc btagMM_chitest noctag
+  M 2018 data btagMM_chitest noctag
+  E 2018 data btagMM_chitest noctag
+  allMC 2016B mc btagMM_chitest noctag
+  M 2016B data btagMM_chitest noctag
+  E 2016B data btagMM_chitest noctag
+  allMC 2017 mc btagMM_chitest noctag
+  M 2017 data btagMM_chitest noctag
+  E 2017 data btagMM_chitest noctag
+  allMC 2016 mc btagMM_chitest ctag
+  M 2016 data btagMM_chitest ctag
+  E 2016 data btagMM_chitest ctag
+  allMC 2018 mc btagMM_chitest ctag
+  M 2018 data btagMM_chitest ctag
+  E 2018 data btagMM_chitest ctag
+  allMC 2016B mc btagMM_chitest ctag
+  M 2016B data btagMM_chitest ctag
+  E 2016B data btagMM_chitest ctag
+  allMC 2017 mc btagMM_chitest ctag
+  M 2017 data btagMM_chitest ctag
+  E 2017 data btagMM_chitest ctag
+)

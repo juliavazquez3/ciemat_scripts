@@ -1,0 +1,11 @@
+Executable = /nfs/cms/vazqueze/higgssearch/hcondor/run_muoneff.sh
+
+Request_memory = 10000
++CieIncludeAF=True
++CieSingularityImage=cc7
+
+Log    = higgsbackgFromJF$(ClusterId).$(ProcId).log
+Output = higgsbackgFromJF$(ClusterId).$(ProcId).out
+Error  = higgsbackgFromJF$(ClusterId).$(ProcId).err
+
+Queue

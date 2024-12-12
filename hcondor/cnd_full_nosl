@@ -1,0 +1,24 @@
+Executable = /nfs/cms/vazqueze/higgssearch/hcondor/run_wqq_syst.sh
+
+requirements = stringListIMember("DCACHE_NFS", TARGET.WN_property, ",")
+
+request_cpus=4
+
+Log    = higgsbackgFromJF$(ClusterId).$(ProcId).log
+Output = higgsbackgFromJF$(ClusterId).$(ProcId).out
+Error  = higgsbackgFromJF$(ClusterId).$(ProcId).err
+
+queue arguments from (
+  allMC 2016 mc btagMM
+  M 2016 data btagMM
+  E 2016 data btagMM
+  allMC 2018 mc btagMM
+  M 2018 data btagMM
+  E 2018 data btagMM
+  allMC 2016B mc btagMM
+  M 2016B data btagMM
+  E 2016B data btagMM
+  allMC 2017 mc btagMM
+  M 2017 data btagMM
+  E 2017 data btagMM
+)
