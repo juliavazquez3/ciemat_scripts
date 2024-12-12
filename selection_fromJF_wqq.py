@@ -23,9 +23,7 @@ import argparse
 script_dir = os.path.dirname(os.path.abspath(__file__))
 path1 = os.path.join(script_dir, auxiliar)
 
-sys.path.append('/nfs/cms/vazqueze/ttbaranalisis/last_corrections/')
-sys.path.append('/nfs/cms/vazqueze/higgssearch/fromJF/ratios_muons_botjet/')
-sys.path.append('/nfs/cms/vazqueze/framework_Jaime/hhbbtt-analysis/nanoaod_base_analysis/data/cmssw/CMSSW_12_3_0_pre6/src/Corrections/JME/python/')
+sys.path.append(path1)
 
 # Some defaults
 gROOT.SetStyle("Plain")
@@ -125,10 +123,10 @@ if args.notfull:
 
 if mode == "mc": 
    if years[0]=="2016B": 
-      files = json.load(open("/nfs/cms/vazqueze/higgssearch/mcinfo2016.json"))
+      files = json.load(open(script_dir+"/mcinfo2016.json"))
    else:
-      files = json.load(open("/nfs/cms/vazqueze/higgssearch/mcinfo"+years[0]+".json"))
-else: files = json.load(open("/nfs/cms/vazqueze/higgssearch/datainfo.json"))
+      files = json.load(open(script_dir+"/mcinfo"+years[0]+".json"))
+else: files = json.load(open(script_dir+"/datainfo.json"))
 
 processes = files.keys()
 
@@ -291,9 +289,9 @@ nevents = {}
 if mode == "mc":
    for data_op in years:
         if data_op=="2016B":
-           files = json.load(open("/nfs/cms/vazqueze/higgssearch/mcinfo2016.json"))
+           files = json.load(open(script_dir+"/mcinfo2016.json"))
         else:
-           files = json.load(open("/nfs/cms/vazqueze/higgssearch/mcinfo"+data_op+".json"))
+           files = json.load(open(script_dir+"/mcinfo"+data_op+".json"))
         lumi[data_op] = {}
         xsecs[data_op] = {}
         for p in samples:
